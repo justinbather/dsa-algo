@@ -74,7 +74,7 @@ class BST {
             
             arr.push(node.value)
         }
-        console.log(String(arr))
+        
         return String(arr)
     }
 
@@ -86,7 +86,7 @@ class BST {
             arr.push(node.value)
             this.inOrderTraverse(node.right, arr)
         }
-        console.log(String(arr))
+        
         return String(arr)
     }
 
@@ -97,7 +97,7 @@ class BST {
             this.preOrderTraverse(node.left, arr)
             this.preOrderTraverse(node.right, arr)
         }
-        console.log(String(arr))
+        
         return String(arr)
     }
 
