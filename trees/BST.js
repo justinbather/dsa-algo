@@ -1,5 +1,6 @@
 const Node = require('./node')
-//TODO: Create a Node type with a value generic of T, a left, and a right Node
+//TODO
+//* - Add recursive methods for insert
 
 
 
@@ -14,6 +15,7 @@ class BST {
         
     }
 
+
     search(value) {
         if (!this.root) {
             return undefined
@@ -21,7 +23,7 @@ class BST {
 
         while(this.root) {
             if (this.root.value === value) {
-                return this.root
+                return this.root.value
             }
 
             if (this.root.value < value && this.root.right) {
@@ -65,6 +67,32 @@ class BST {
             }
         }
         
+    }
+
+    recursiveInsert(node, value) {
+        if (!node) {
+            node = new Node(value)
+            return node
+        }
+
+        if (node.value > value) {
+            if (!node.left) {
+                node.left = new Node(value)
+                return node.left.value
+            } else {
+                return this.recursiveInsert(node.left, value)
+            }
+
+        }
+
+        if(node.value < value) {
+            if (!node.right) {
+                node.right = new Node(value)
+                return node.right.value
+            } else {
+                return this.recursiveInsert(node.right, value)
+            }
+        }
     }
 
     postOrderTraverse(node, arr) {

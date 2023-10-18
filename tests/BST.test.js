@@ -34,3 +34,14 @@ let bst = new BST(node1)
  test('Test pre order traversal', () => {
    expect(bst.preOrderTraverse(bst.root, [])).toBe('10,5,1,4,20,11,12')
  })
+
+
+ test('Testing recursive insert', () => {
+   
+   bst.recursiveInsert(1)
+   bst.recursiveInsert(4)
+   bst.recursiveInsert(20)
+   bst.recursiveInsert(11)
+   bst.recursiveInsert(12)
+   expect(bst.inOrderTraverse(bst.root, [])).toBe('1,4,5,10,11,12,20')
+ })
