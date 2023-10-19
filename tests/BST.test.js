@@ -24,6 +24,16 @@ let bst = new BST(node1)
     expect(bst.inOrderTraverse(bst.root, [])).toBe('1,4,5,10,11,12,20')
  })
 
+ test('Test Iterative in order traverse', () => {
+  bst.insert(1)
+    bst.insert(4)
+    bst.insert(20)
+    bst.insert(11)
+    bst.insert(12)
+    
+    expect(bst.inOrderTraverseIter(bst.root)).toBe('1,4,5,10,11,12,20')
+ })
+
 // * Test Post order traverse
  test('Test post order traversal', () => {
    expect(bst.postOrderTraverse(bst.root, [])).toBe('4,1,5,12,11,20,10')

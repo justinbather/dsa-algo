@@ -118,6 +118,27 @@ class BST {
         return String(arr)
     }
 
+    inOrderTraverseIter(node) {
+        let output = []
+        let stack = []
+        let curr = node
+
+        while (curr !== null || stack.length > 0) {
+
+            while (curr !== null) {
+                stack.push(curr)
+                curr= curr.left
+
+            }
+
+            curr = stack.pop()
+            output.push(curr.value)
+            curr = curr.right
+        }
+
+        return String(output)
+    }
+
     preOrderTraverse(node, arr) {
         if (node) {
             
